@@ -34,3 +34,7 @@ npm test
 ## ToDo
 
 * Add a self hosted runner for github actions to run tests on Arm machines
+
+## Credits
+
+Thanks a ton to my friend @jurgob for helping me with this project!
