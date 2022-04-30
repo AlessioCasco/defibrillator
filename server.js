@@ -5,11 +5,12 @@ const express = require('express'),
 const { exec } = require('child_process');
 const path = require('path');
 
+const regex = /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/;
 // const querystring = require('querystring');
 
 app.listen(port);
 
-app.get("/api/run", (req, res) =>{
+app.post("/api/run", (req, res) =>{
     let {macaddr} = req.query
 
     // const cmd = `echo "${macaddr}" | wc -c ; echo "${macaddr}"`

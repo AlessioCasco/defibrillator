@@ -1,4 +1,4 @@
-# defibrillator
+# Defibrillator
 
 ## install
 
