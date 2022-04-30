@@ -5,19 +5,25 @@ const express = require('express'),
 const { exec } = require('child_process');
 const path = require('path');
 
-const regex = /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/;
-// const querystring = require('querystring');
+const isValidMacAddress = require('./src/check_macaddress')
 
 app.listen(port);
 
 app.get("/api/run", (req, res) =>{
     let {macaddr} = req.query
+    if(!isValidMacAddress(macaddr)){
+      res.statusCode = 400;
+      return res.json({
+        message: `${macaddr} is not a valid macaddress`
+      })
+    }
 
-    // const cmd = `echo "${macaddr}" | wc -c ; echo "${macaddr}"`
     const cmd = `wakeonlan -p 7 ${macaddr}`
+
     exec(cmd, (error, stdout, stderr) => {
         res.json({
             cmd: `${cmd}`,
+            check: isValidMacAddress(),
             stdout,
             stderr,
             error
