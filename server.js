@@ -10,7 +10,7 @@ const regex = /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/;
 
 app.listen(port);
 
-app.post("/api/run", (req, res) =>{
+app.get("/api/run", (req, res) =>{
     let {macaddr} = req.query
 
     // const cmd = `echo "${macaddr}" | wc -c ; echo "${macaddr}"`
