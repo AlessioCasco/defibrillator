@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sample Site</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    body { padding-top: 50px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+
+      <form method="GET" action="/api/run">
+        <p>Welcome, which computer in London would you like to turn on?</p>
+        <input type="radio" id="pc1" name="macaddr" value="2C:FD:A1:59:71:04" checked>
+        <label for="pc1">Desktop</label><br>
+
+        <!-- <input type="radio" id="pc2" name="macaddr" value="AA:BB:CC:DD:EE:FF">
+        <label for="pc2">Francisco's Laptop</label><br> -->
+
+        <button type="submit">Wake it up</button>
+      </form>
+
+    </div>
+  </div>
+
+</body>
+</html>
